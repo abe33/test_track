@@ -11,13 +11,13 @@ Gem::Specification.new do |s|
   s.email       = ["ryan@quickleft.com", "sam@quickleft.com"]
   s.homepage    = "https://github.com/quickleft/test_track"
   s.summary     = "Painless Javascript testing for Rails 3.1+"
-  s.description = "TestTrack provides sane defaults for using Javascript test frameworks in the Rails 3.1 Asset Pipeline"
+  s.description = "TestTrack provides sane defaults for using Javascript test frameworks in the Rails 3.1+ Asset Pipeline"
 
   s.files = Dir["{app,config,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.1.0"
+  s.add_dependency "rails"
 
-  s.add_development_dependency "coffee-rails" , "~> 3.1.0"
+  s.add_development_dependency "coffee-rails"
   s.add_development_dependency "rspec-rails", "~> 2.6"
 end
