@@ -1,0 +1,29 @@
+!!! XML
+!!! 5
+%html
+  %head
+  %meta{ charset: "UTF-8"}
+  %title= 'QUnit Test Suite'
+
+  = stylesheet_link_tag 'qunit/qunit', media: 'screen'
+  = javascript_include_tag 'qunit/qunit'
+
+  - if TestTrack.include_sinon
+    = javascript_include_tag 'sinon/sinon-1.1.1'
+
+  = javascript_include_tag 'test_track/qunit_suite'
+
+  - if TestTrack.include_sinon
+    = javascript_include_tag 'sinon/sinon-qunit-1.0.0'
+
+  = javascript_include_multiple TestTrack.application_manifest
+  = javascript_include_tag TestTrack.qunit_manifest
+
+
+%body
+  %h1{ id:"qunit-header" }= 'QUnit Test Suite'
+  %h2{ id:"qunit-banner" }
+  #qunit-testrunner-toolbar
+  %h2{ id:"qunit-userAgent"}
+  %ol{ id:"qunit-tests"}
+  #qunit-fixture='test markup'
